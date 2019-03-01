@@ -4,7 +4,11 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-
-  ]
+  routes: [{
+    path: '/login',
+    component: resolve => require(['../views/Login/Login.vue'], resolve),
+    meta: {
+      title: '新世界的大门'
+    }
+  }]
 })
