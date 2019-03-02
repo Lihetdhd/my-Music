@@ -1,26 +1,27 @@
 <template>
   <div class="login">
     <div class="bg">
-      <div class="login-box">
-        <div class="title">
-          <label>登录</label>
+      <transition name="forms">
+        <div class="login-box" v-show="formShow">
+          <div class="title">
+            <label>登录</label>
+          </div>
+          <div class="form">
+            <el-form lable-width="80px">
+              <el-form-item label="账号">
+                <input type="text" v-model="userName" placeholder="请输入账号">
+              </el-form-item>
+              <el-form-item label="密码">
+                <input type="password" v-model="userName" placeholder="请输入密码">
+              </el-form-item>
+            </el-form>
+            <el-button class="go" @click="formShow = !formShow">
+              <label>来吧！进入新的世界✧*｡٩(ˊᗜˋ*)و✧*｡</label>
+            </el-button>
+          </div>
+          <div></div>
         </div>
-        <div class="form">
-          <el-form lable-width="80px">
-            <el-form-item label="账号">
-              <input type="text" v-model="userName" placeholder="请输入账号">
-            </el-form-item>
-            <el-form-item label="密码">
-              <input type="password" v-model="userName" placeholder="请输入密码">
-            </el-form-item>
-          </el-form>
-          <el-button class="go">
-            <label>来吧！进入新的世界✧*｡٩(ˊᗜˋ*)و✧*｡</label>
-          </el-button>
-        </div>
-
-        <div></div>
-      </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -28,10 +29,15 @@
 export default {
   data() {
     return {
-      userName: 0,
-      password: ""
+      userName: "",
+      password: "",
+      formShow: false
     };
-  }
+  },
+  mounted() {
+    this.formShow = true;
+  },
+  methods: {}
 };
 </script>
 <style lang="less" scoped>
@@ -53,6 +59,7 @@ export default {
 }
 @color: #fff;
 .login-box {
+  z-index: 10;
   color: @color;
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -96,6 +103,17 @@ input {
   border-bottom: 1px solid #aaa;
   color: @color;
   background: rgba(0, 0, 0, 0);
+}
+
+.forms-enter-active,
+.forms-leave-active {
+  transition: all 1s ease;
+}
+
+.forms-enter,
+.forms-leave-to {
+  transform: translateY(30px);
+  opacity: 0;
 }
 </style>
 <style>
