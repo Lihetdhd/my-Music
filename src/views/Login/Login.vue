@@ -8,15 +8,15 @@
         <div class="form">
           <el-form lable-width="80px">
             <el-form-item label="账号">
-              <el-input class="input" v-model="userName" placeholder></el-input>
+              <input type="text" v-model="userName" placeholder="请输入账号">
             </el-form-item>
             <el-form-item label="密码">
-              <el-input v-model="userName" placeholder></el-input>
+              <input type="password" v-model="userName" placeholder="请输入密码">
             </el-form-item>
           </el-form>
-        </div>
-        <div class="go">
-          <label>来吧！进入新的世界✧*｡٩(ˊᗜˋ*)و✧*｡</label>
+          <el-button class="go">
+            <label>来吧！进入新的世界✧*｡٩(ˊᗜˋ*)و✧*｡</label>
+          </el-button>
         </div>
 
         <div></div>
@@ -28,7 +28,8 @@
 export default {
   data() {
     return {
-      userName: 0
+      userName: 0,
+      password: ""
     };
   }
 };
@@ -50,8 +51,9 @@ export default {
   background: url("../../style/images/login.jpg") no-repeat;
   background-size: 100% 100%;
 }
+@color: #fff;
 .login-box {
-  color: #fff;
+  color: @color;
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
   border-radius: 5px;
@@ -63,9 +65,16 @@ export default {
   width: 90%;
   max-height: 345px;
   max-width: 440px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
 }
 .go {
+  height: 45px;
+  background: #1f4474;
   text-align: center;
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  color: @color;
 }
 .title {
   padding: 10px 0;
@@ -78,14 +87,15 @@ export default {
 .form {
   padding: 0 55px;
 }
-.input {
-  color: #fff;
-  background: rgba(0, 0, 0, 0) !important;
+input {
+  width: 100%;
+  height: 35px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #aaa;
+  color: @color;
+  background: rgba(0, 0, 0, 0);
 }
 </style>
 <style>
-.el-input__inner {
-  background: transparent;
-}
-</style>
-
