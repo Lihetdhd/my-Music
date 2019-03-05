@@ -1,5 +1,9 @@
 <template>
-  <div class="login">
+  <div>
+    <div class="login"></div>
+    <div class="keep-auto">
+      <star></star>
+    </div>
     <div class="bg">
       <transition name="forms">
         <div class="login-box" v-show="formShow">
@@ -15,7 +19,7 @@
                 <input type="password" v-model="userName" placeholder="请输入密码">
               </el-form-item>
             </el-form>
-            <el-button class="go" @click="formShow = !formShow">
+            <el-button class="go">
               <label>来吧！进入新的世界✧*｡٩(ˊᗜˋ*)و✧*｡</label>
             </el-button>
           </div>
@@ -26,7 +30,11 @@
   </div>
 </template>
 <script>
+import star from "../../components/star";
 export default {
+  components: {
+    star
+  },
   data() {
     return {
       userName: "",
@@ -50,7 +58,7 @@ export default {
 }
 .bg {
   .login-foxed();
-  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 .login {
   .login-foxed();
@@ -82,6 +90,7 @@ export default {
   width: 100%;
   border: none;
   color: @color;
+  position: relative;
 }
 .title {
   padding: 10px 0;
@@ -114,6 +123,17 @@ input {
 .forms-leave-to {
   transform: translateY(30px);
   opacity: 0;
+}
+.keep-auto {
+  width: 100%;
+  height: 50%;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+.go:hover {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
 }
 </style>
 <style>

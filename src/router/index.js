@@ -5,17 +5,17 @@ Vue.use(Router)
 
 export default new Router({
   routes: [{
-      path: '/',
+      path: '/login',
       component: resolve => require(['../views/Login/Login.vue'], resolve),
       meta: {
         title: '新世界的大门'
       },
     },
     {
-      path: '/ddd',
-      component: resolve => require(['../views/ddd.vue'], resolve),
+      path: '/',
+      component: resolve => require(['../views/home.vue'], resolve),
       meta: {
-        title: '新世界的大门'
+        title: '首页'
       },
     }
   ]
