@@ -23,7 +23,6 @@
               <label>来吧！进入新的世界✧*｡٩(ˊᗜˋ*)و✧*｡</label>
             </el-button>
           </div>
-          <div></div>
         </div>
       </transition>
     </div>
