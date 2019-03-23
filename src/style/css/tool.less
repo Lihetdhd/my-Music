@@ -1,0 +1,17 @@
+/* 下划线 */
+.background(@bgcolor) {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: @bgcolor;
+  transition: all 0.3s ease-in-out 0s;
+  visibility: hidden; //使元素不可见，会占据空间
+}
+
+.underline:hover:before {
+  visibility: visible;
+  width: 100%;
+}

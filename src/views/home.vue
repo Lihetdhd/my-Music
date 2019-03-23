@@ -2,19 +2,12 @@
 <template>
   <el-container class="home">
     <el-header>
-      <!-- <el-menu
-          :default-active="activeIndex"
-          mode="horizontal"
-          @select="handleSelect"
-          background-color="transparent"
-          text-color="#b3bdb3"
-          active-text-color="#e2e2da"
-        >
-          <el-menu-item :index="item.name" v-for=" (item,index) in list" :key="index">{{item.label}}</el-menu-item>
-      </el-menu>-->
       <div class="header">
         <ul>
-          <li v-for="(item,index) in nav" :key="index">{{item.name}}</li>
+          <li v-for="(item,index) in nav" :key="index" class="underline">
+            <i class></i>
+            <router-link tag="li" :to="item.index">{{item.name}}</router-link>
+          </li>
         </ul>
       </div>
     </el-header>
@@ -62,6 +55,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../style/css/tool.less";
 .home {
   position: fixed;
   top: 0;
@@ -80,9 +74,15 @@ export default {
       line-height: 40px;
       display: inline-block;
       color: #fff;
-      padding: 0 12px;
+      padding: 0 20px;
       cursor: pointer; //鼠标手势-手指
     }
+  }
+}
+.underline {
+  position: relative;
+  &:before {
+    .background(rgba(255, 255, 255, 0.5));
   }
 }
 </style>
