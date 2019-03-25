@@ -4,10 +4,16 @@
     <el-header>
       <div class="header">
         <ul>
-          <li v-for="(item,index) in nav" :key="index" class="underline">
-            <i class></i>
-            <router-link tag="li" :to="item.index">{{item.name}}</router-link>
-          </li>
+          <router-link
+            tag="li"
+            v-for="(item,index) in nav"
+            :key="index"
+            class="underline"
+            :to="item.index"
+          >
+            <i :class="item.icon"></i>
+            {{item.name}}
+          </router-link>
         </ul>
       </div>
     </el-header>
@@ -22,11 +28,13 @@ export default {
       nav: [
         {
           name: "首页",
-          index: "/"
+          index: "/",
+          icon: "fa fa-home"
         },
         {
           name: "Dom",
-          index: "/Dom"
+          index: "/Dom",
+          icon: "fa fa-folder-o"
         }
       ],
       liWidth: 0
@@ -81,6 +89,7 @@ export default {
 }
 .underline {
   position: relative;
+  text-align: center;
   &:before {
     .background(rgba(255, 255, 255, 0.5));
   }
