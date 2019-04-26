@@ -17,6 +17,13 @@ export default new Router({
       meta: {
         title: '首页'
       },
+      children: [{
+        path: '/dom',
+        component: resolve => (['../views/dom/dom.vue'], resolve),
+        meta: {
+          title: 'dom'
+        }
+      }]
     }
   ]
 })

@@ -14,10 +14,13 @@
             <i :class="item.icon"></i>
             {{item.name}}
           </router-link>
+          <router-link to="/dom">123</router-link>
         </ul>
       </div>
     </el-header>
-    <el-main></el-main>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
   </el-container>
 </template>
 <script>
@@ -32,8 +35,8 @@ export default {
           icon: "fa fa-home"
         },
         {
-          name: "Dom",
-          index: "/Dom",
+          name: "dom",
+          index: "/dom",
           icon: "fa fa-folder-o"
         }
       ],
