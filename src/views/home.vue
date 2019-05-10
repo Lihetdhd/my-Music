@@ -10,11 +10,11 @@
             :key="index"
             class="underline"
             :to="item.index"
+            @click="toNewPage(item.index)"
           >
             <i :class="item.icon"></i>
             {{item.name}}
           </router-link>
-          <router-link to="/dom">123</router-link>
         </ul>
       </div>
     </el-header>
@@ -35,8 +35,28 @@ export default {
           icon: "fa fa-home"
         },
         {
-          name: "dom",
-          index: "/dom",
+          name: "组件库",
+          index: "/ComponentLibrary",
+          icon: "fa fa-folder-o"
+        },
+        {
+          name: "css",
+          index: "/css",
+          icon: "fa fa-folder-o"
+        },
+        {
+          name: "vue",
+          index: "/vue",
+          icon: "fa fa-folder-o"
+        },
+        {
+          name: "js",
+          index: "/js",
+          icon: "fa fa-folder-o"
+        },
+        {
+          name: "jQ",
+          index: "/jQ",
           icon: "fa fa-folder-o"
         }
       ],
@@ -60,7 +80,12 @@ export default {
       console.log("boxWidth", boxWidth);
       console.log("ulWidth", ulWidth);
     },
-    you() {}
+    toNewPage(url) {
+      console.log(123);
+      this.$router.push({
+        path: url
+      });
+    }
   }
 };
 </script>

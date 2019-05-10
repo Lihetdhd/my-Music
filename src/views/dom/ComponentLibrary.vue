@@ -1,11 +1,17 @@
 <template>
   <!--dom合集  -->
-  <div class="dom-box">123</div>
+  <div class="dom-box">
+    <swiper></swiper>
+  </div>
 </template>
 <script>
+import swiper from "../../components/swiper3D";
 export default {
   data() {
     return {};
+  },
+  components: {
+    swiper
   }
 };
 </script>
@@ -13,6 +19,7 @@ export default {
 .dom-box {
   width: 85%;
   margin: 50px auto;
+  padding: 30px;
   border-radius: 8px;
   background: rgba(204, 204, 204, 0.5);
 }
